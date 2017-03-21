@@ -4,7 +4,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('<a href=/rango/about>Rango says hey there world.</a>')
+    context_dict = {'boldmessage': 'I am bold font from the context'}
+    return render(request, 'rango/index.html', context_dict)
 
 
 def about(request):
