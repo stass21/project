@@ -9,4 +9,4 @@ def index(request):
 
 
 def about(request):
-    return  HttpResponse('Rango says here is the about page. <a href=/rango>index</a>')
+    return  HttpResponse('Rango says here is the about page.<br> <a href=/rango>index</a>')
