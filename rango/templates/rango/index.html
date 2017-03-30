@@ -8,7 +8,17 @@
 </head>
 <body>
     <h1> Rango says...</h1>
-    hello world!!! <strong> {{ boldmessage }}</strong><br>
+    <div>hey there parther</div>
+    <div> {% if  categories %}
+        <ul> {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+        </ul>
+     {% else %}
+        <strong>There are categories present</strong>
+    {% endif %}
+
+    </div>
     <a href="/rango/about/">about</a><br>
     <img src="{% static "images/rango.jpg" %}"alt="Picture of Rango">
 </body>
