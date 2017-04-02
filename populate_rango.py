@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
 import django
 django.setup()
 from rango.models import Category, Page
-
+import random
 def populate():
 
     python_pages = [
@@ -40,10 +40,38 @@ def populate():
 
 def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
-
-    p.url = url
-    p.views = views
-    p.save()
+    if p.title == "Official Python Tutorial":
+        p.views = 100
+        p.url = url
+        p.save()
+    elif p.title == "How to Think like a Computer Scientist":
+        p.views = 110
+        p.url = url
+        p.save()
+    elif p.title == "Learn Python in 10 Minutes":
+        p.views = 120
+        p.url = url
+        p.save()
+    elif p.title == "Official Django Tutorial":
+        p.views = 130
+        p.url = url
+        p.save()
+    elif p.title == "Django Rocks":
+        p.views = 140
+        p.url = url
+        p.save()
+    elif p.title == "How to Tango with Django":
+        p.views = 150
+        p.url = url
+        p.save()
+    elif p.title == "Bottle":
+        p.views = 160
+        p.url = url
+        p.save()
+    elif p.title == "Flask":
+        p.views = 170
+        p.url = url
+        p.save()
     return p
 
 def add_cat(name, views=0, likes=0):
@@ -69,3 +97,4 @@ def add_cat(name, views=0, likes=0):
 if __name__ == '__main__':
     print("Starting Rango population script...")
     populate()
+
