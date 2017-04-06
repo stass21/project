@@ -10,18 +10,18 @@
     <h1> Rango says...</h1>
     <div>hey there parther</div>
     <div>
-{% if categories %}
+{% if pages %}
 <ul>
-{% for category in categories %}
+    {% for page in pages %}
 <!-- Following line changed to add an HTML hyperlink -->
 <li>
-<a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+       <a href="{{ page.url }}">{{ page.title }}</a>
 </li>
-{% endfor %}
+        {% endfor %}
 </ul>
-{% else %}
-<strong>There are no categories present.</strong>
-{% endif %}
+    {% else %}
+        <strong>There are no categories present.</strong>
+    {% endif %}
 </div>
 <div>
 <a href="/rango/about/">About Rango</a><br />
